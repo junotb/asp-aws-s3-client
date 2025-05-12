@@ -68,6 +68,13 @@ Class cAwsS3Client
     End Function
 
     '**
+    ' S3 객체 키 획득
+    '**
+    Function GetS3ObjectKey(ByVal filePath)
+        GetS3ObjectKey = CanonicalUriEncode(S3_ROOT_DIRECTORY & filePath)
+    End Function
+
+    '**
     ' 컨텐츠 타입 획득
     '**
     Function GetContentTypeFromKey(ByVal key)
@@ -176,7 +183,11 @@ Class cAwsS3Client
     ' HMACSHA256 객체 획득
     Private Function HMACSHA256(ByVal varKey, ByVal varValue)
         With Server.CreateObject("System.Security.Cryptography.HMACSHA256")
-            .Key = IIF(IsArray(varKey), varKey, UTF8Bytes(varKey))
+            If IsArray(varKey) Then
+                .Key = varKey
+            Else
+                .Key = UTF8Bytes(varKey)
+            End If
             HMACSHA256 = .ComputeHash_2(UTF8Bytes(varValue))
         End With
     End Function
