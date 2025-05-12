@@ -24,6 +24,7 @@ Classic ASP 환경에서 AWS Signature Version 4 방식으로 S3 객체를 안�
 
 ## 설정 가이드
 
+```
 Private S3                  ' 예시: s3
 Private S3_BUCKET           ' 예시: my-bucket
 Private S3_REGION           ' 예시: us-east-1
@@ -33,3 +34,4 @@ Private S3_ACL              ' 예시: public-read
 Private S3_USER_NAME        ' 예시: my-user
 Private S3_ACCESS_KEY       ' 예시: my-access-key
 Private S3_SECRET_KEY       ' 예시: my-secret-key
+```
