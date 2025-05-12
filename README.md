@@ -15,12 +15,12 @@ Classic ASP 환경에서 AWS Signature Version 4 방식으로 S3 객체를 안�
   - `GetContentTypeFromKey(key)` : 확장자에 따른 Content-Type 추론
   - 내부적으로 AWS Signature V4 헤더 자동 생성 및 인증 처리
 
-### `downloadS3File.asp`
+### `example.asp`
 
 - HTTP GET 파라미터 `S3ObjectKey`를 기준으로 지정된 S3 객체를 가져와 브라우저로 전송합니다.
 - 예:
   ```http
-  GET /downloadS3File.asp?S3ObjectKey=/zoom-data/vtt/123/456.vtt
+  GET /example.asp?S3ObjectKey=/zoom-data/vtt/123/456.vtt
 
 ## 설정 가이드
 
